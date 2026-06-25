@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#080B14;}
+  ::selection{background:rgba(100,120,240,0.35);}
+  @keyframes nvFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes nvPulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @keyframes nvDash{to{stroke-dashoffset:-24}}
+  a{text-decoration:none;color:inherit;}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--accent:#6478F0; --accent-deep:#3D49B5; background:#080B14; color:#EAEDF6; font-family:'Manrope',system-ui,sans-serif; min-height:100vh; position:relative; overflow:hidden;">
+
+  <!-- ambient glows -->
+  <div style="position:absolute; top:-260px; left:50%; transform:translateX(-50%); width:1100px; height:600px; background:radial-gradient(60% 60% at 50% 40%, rgba(100,120,240,0.22), transparent 70%); pointer-events:none; filter:blur(20px);"></div>
+  <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px); background-size:54px 54px; mask-image:radial-gradient(80% 60% at 50% 0%, #000 30%, transparent 80%); pointer-events:none;"></div>
+
+  <!-- NAV -->
+  <nav style="position:relative; z-index:5; max-width:1200px; margin:0 auto; padding:26px 40px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="#top" style="display:flex; align-items:center; gap:12px;">
+      <img src="assets/neovie-mark.png" alt="neovie.dev" style="width:38px; height:38px; object-fit:contain;">
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px; letter-spacing:1px; color:#fff;">NEOVIE<span style="color:var(--accent); font-weight:600;">.dev</span></span>
+    </a>
+    <div style="display:flex; align-items:center; gap:34px;">
+      <div style="display:flex; gap:30px; font-size:14.5px; color:#A6AEC8; font-weight:500;">
+        <a href="#leistungen" style-hover="color:#fff">Leistungen</a>
+        <a href="#vorgehen" style-hover="color:#fff">Vorgehen</a>
+        <a href="#stack" style-hover="color:#fff">Stack</a>
+        <a href="#kontakt" style-hover="color:#fff">Kontakt</a>
+      </div>
+      <a href="https://cal.com/neovie" target="_blank" style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:600; padding:11px 20px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; box-shadow:0 8px 24px -8px rgba(100,120,240,0.7);" style-hover="filter:brightness(1.08)">Gespräch buchen</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="position:relative; z-index:4; max-width:1200px; margin:0 auto; padding:70px 40px 90px; display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--accent); padding:7px 14px; border:1px solid rgba(100,120,240,0.3); border-radius:100px; background:rgba(100,120,240,0.07); margin-bottom:26px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); animation:nvPulse 2s ease-in-out infinite;"></span>
+        KI-BERATUNG · WIEN
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:60px; line-height:1.04; letter-spacing:-1.5px; margin:0 0 22px; color:#fff;">KI-Workflows, die euer Geschäft <span style="background:linear-gradient(120deg,var(--accent),#9aa6ff); -webkit-background-clip:text; background-clip:text; color:transparent;">wirklich bewegen.</span></h1>
+      <p style="font-size:18px; line-height:1.6; color:#A6AEC8; max-width:520px; margin:0 0 34px;">neovie.dev ist eure Beratungsagentur für KI-getriebene Workflows und digitale Produkte — mit Spezialisierung auf UI/UX. Aus Wien. Für KMU bis Enterprise.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+        <a href="https://cal.com/neovie" target="_blank" style="font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600; padding:15px 26px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; box-shadow:0 14px 34px -12px rgba(100,120,240,0.8);" style-hover="filter:brightness(1.08)">Gespräch buchen →</a>
+        <a href="mailto:sales@neovie.dev" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:15px 22px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.04)">sales@neovie.dev</a>
+      </div>
+      <div style="display:flex; gap:30px; margin-top:46px;">
+        <div><div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff;">Beratung</div><div style="font-size:13px; color:#7F88A6; margin-top:2px;">+ Umsetzung auf Wunsch</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div><div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff;">UI/UX</div><div style="font-size:13px; color:#7F88A6; margin-top:2px;">unsere Kernkompetenz</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div><div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff;">Netzwerk</div><div style="font-size:13px; color:#7F88A6; margin-top:2px;">Fachkräfte aller Bereiche</div></div>
+      </div>
+    </div>
+
+    <!-- Workflow card -->
+    <div style="position:relative;">
+      <div style="position:absolute; inset:-1px; border-radius:22px; background:linear-gradient(135deg,rgba(100,120,240,0.5),rgba(61,73,181,0.1)); filter:blur(0px);"></div>
+      <div style="position:relative; background:linear-gradient(180deg,#0E1322,#0B0F1B); border:1px solid rgba(255,255,255,0.08); border-radius:21px; padding:26px; box-shadow:0 40px 80px -40px rgba(0,0,0,0.8);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:22px;">
+          <span style="width:11px; height:11px; border-radius:50%; background:#FF5F57;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#FEBC2E;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#28C840;"></span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#646E8C; margin-left:8px;">neovie · workflow.run</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 16px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); width:54px;">INPUT</span>
+            <span style="font-size:14px; color:#C9CFE3;">Anfrage · Dokument · Trigger</span>
+          </div>
+          <div style="width:2px; height:18px; background:linear-gradient(var(--accent),transparent); margin-left:25px;"></div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 16px; border-radius:12px; background:linear-gradient(135deg,rgba(100,120,240,0.16),rgba(100,120,240,0.04)); border:1px solid rgba(100,120,240,0.35);">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); width:54px;">KI-AGENT</span>
+            <span style="font-size:14px; color:#fff; font-weight:600;">Verstehen · Entscheiden · Handeln</span>
+            <span style="margin-left:auto; width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); animation:nvPulse 1.6s infinite;"></span>
+          </div>
+          <div style="width:2px; height:18px; background:linear-gradient(var(--accent),transparent); margin-left:25px;"></div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 16px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); width:54px;">REVIEW</span>
+            <span style="font-size:14px; color:#C9CFE3;">Human-in-the-loop Kontrolle</span>
+          </div>
+          <div style="width:2px; height:18px; background:linear-gradient(var(--accent),transparent); margin-left:25px;"></div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 16px; border-radius:12px; background:rgba(40,200,100,0.06); border:1px solid rgba(40,200,100,0.22);">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3DD68C; width:54px;">OUTPUT</span>
+            <span style="font-size:14px; color:#C9CFE3;">Ergebnis im richtigen System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen" style="position:relative; z-index:3; max-width:1200px; margin:0 auto; padding:60px 40px;">
+    <div style="display:flex; align-items:end; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:42px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--accent); margin-bottom:14px;">// LEISTUNGEN</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:40px; letter-spacing:-1px; margin:0; color:#fff;">Von der Strategie bis zum Interface.</h2>
+      </div>
+      <p style="font-size:15.5px; color:#8C94B0; max-width:340px; line-height:1.6; margin:0;">Wir beraten — und unterstützen bei Bedarf bis in die Umsetzung. Mit einem Netzwerk aus Spezialist:innen für jeden digitalen Bereich.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+        <div style="position:relative; background:linear-gradient(180deg,#0E1322,#0B0F1B); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;" style-hover="border-color:rgba(100,120,240,0.4); transform:translateY(-3px)">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); margin-bottom:18px;">{{ s.no }}</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; margin:0 0 10px; color:#fff;">{{ s.title }}</h3>
+          <p style="font-size:15px; line-height:1.62; color:#9AA2BE; margin:0 0 18px;">{{ s.desc }}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <sc-for list="{{ s.tags }}" as="t" hint-placeholder-count="3">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#A6AEC8; padding:5px 11px; border-radius:7px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);">{{ t }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- VORGEHEN -->
+  <section id="vorgehen" style="position:relative; z-index:3; max-width:1200px; margin:0 auto; padding:60px 40px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--accent); margin-bottom:14px;">// VORGEHEN</div>
+    <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:40px; letter-spacing:-1px; margin:0 0 46px; color:#fff; max-width:640px;">Klar, pragmatisch, messbar.</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="padding:28px 24px; border-radius:16px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--accent); margin-bottom:16px;">{{ st.n }}</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:19px; margin:0 0 8px; color:#fff;">{{ st.title }}</h3>
+          <p style="font-size:14px; line-height:1.6; color:#8C94B0; margin:0;">{{ st.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" style="position:relative; z-index:3; max-width:1200px; margin:0 auto; padding:60px 40px 80px;">
+    <div style="background:linear-gradient(180deg,#0D1220,#0A0E18); border:1px solid rgba(255,255,255,0.08); border-radius:24px; padding:50px 46px;">
+      <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:50px; align-items:center;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--accent); margin-bottom:14px;">// STACK & TOOLS</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:34px; letter-spacing:-0.8px; margin:0 0 16px; color:#fff;">Wir arbeiten mit dem, was wirklich liefert.</h2>
+          <p style="font-size:15.5px; line-height:1.6; color:#8C94B0; margin:0;">Modellunabhängig und integrationsstark — wir wählen die Tools nach eurem Use-Case, nicht nach Hype.</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="12">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:14.5px; font-weight:500; color:#C9CFE3; padding:12px 18px; border-radius:11px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);" style-hover="border-color:rgba(100,120,240,0.4); color:#fff">{{ tool }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="position:relative; z-index:3; max-width:1200px; margin:0 auto; padding:30px 40px 90px;">
+    <div style="position:relative; border-radius:28px; overflow:hidden; border:1px solid rgba(100,120,240,0.25); padding:64px 56px; background:linear-gradient(135deg,#101633,#0B0F1E);">
+      <div style="position:absolute; top:-150px; right:-80px; width:500px; height:500px; background:radial-gradient(circle, rgba(100,120,240,0.28), transparent 65%); pointer-events:none;"></div>
+      <div style="position:relative; display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:center;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--accent); margin-bottom:16px;">// LET'S BUILD</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.06; letter-spacing:-1.2px; margin:0 0 18px; color:#fff;">Wo kann KI bei euch Wirkung zeigen?</h2>
+          <p style="font-size:17px; line-height:1.6; color:#A6AEC8; max-width:440px; margin:0 0 32px;">Erzählt uns von eurem Vorhaben — wir melden uns mit einer ehrlichen Einschätzung. Kostenlos und unverbindlich.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="https://cal.com/neovie" target="_blank" style="font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600; padding:16px 28px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; box-shadow:0 14px 34px -12px rgba(100,120,240,0.8);" style-hover="filter:brightness(1.08)">Termin via cal.com →</a>
+            <a href="mailto:sales@neovie.dev" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:16px 24px; border-radius:12px; border:1px solid rgba(255,255,255,0.16); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.32); background:rgba(255,255,255,0.04)">sales@neovie.dev</a>
+          </div>
+        </div>
+        <div style="background:rgba(8,11,20,0.5); border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:20px;">
+            <div style="width:50px; height:50px; border-radius:13px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:#fff;">JP</div>
+            <div>
+              <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#fff;">Julian Petermaier</div>
+              <div style="font-size:13px; color:#8C94B0;">Founder & Geschäftsführer</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:13px; font-size:14px;">
+            <div style="display:flex; justify-content:space-between; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,0.07);"><span style="color:#7F88A6;">E-Mail</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">sales@neovie.dev</span></div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,0.07);"><span style="color:#7F88A6;">Termin</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">cal.com/neovie</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:#7F88A6;">Standort</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">Wien, AT</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="position:relative; z-index:3; border-top:1px solid rgba(255,255,255,0.07);">
+    <div style="max-width:1200px; margin:0 auto; padding:34px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <img src="assets/neovie-mark.png" alt="" style="width:30px; height:30px; object-fit:contain;">
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.5px; color:#fff;">NEOVIE<span style="color:var(--accent);">.dev</span></span>
+      </div>
+      <div style="font-size:13px; color:#6B748F; font-family:'JetBrains Mono',monospace;">AI Workflows. Digital Products. Impact.</div>
+      <div style="font-size:13px; color:#6B748F;">© 2026 neovie.dev · Wien</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:2400},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#6478F0&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  applyAccent() {
+    const el = this._root;
+    if (!el) return;
+    const a = this.props.accentColor || '#6478F0';
+    el.style.setProperty('--accent', a);
+    el.style.setProperty('--accent-deep', this.shade(a, -0.22));
+  }
+  shade(hex, amt) {
+    try {
+      let h = hex.replace('#',''); if(h.length===3) h=h.split('').map(c=>c+c).join('');
+      let r=parseInt(h.slice(0,2),16), g=parseInt(h.slice(2,4),16), b=parseInt(h.slice(4,6),16);
+      r=Math.max(0,Math.min(255,Math.round(r*(1+amt))));
+      g=Math.max(0,Math.min(255,Math.round(g*(1+amt))));
+      b=Math.max(0,Math.min(255,Math.round(b*(1+amt))));
+      return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');
+    } catch(e){ return hex; }
+  }
+  componentDidMount(){ this.applyAccent(); }
+  componentDidUpdate(){ this.applyAccent(); }
+  renderVals() {
+    return {
+      rootRef: (el) => { this._root = el; this.applyAccent(); },
+      services: [
+        { no: '01', title: 'KI-Workflows & Automatisierung', desc: 'Wir identifizieren wiederkehrende Abläufe und bauen KI-Agenten, die sie zuverlässig übernehmen — sauber integriert in eure bestehenden Systeme.', tags: ['Agents', 'Automatisierung', 'Integrationen'] },
+        { no: '02', title: 'UI/UX Design', desc: 'Unsere Kernkompetenz: Interfaces, die KI nahbar machen. Vom Konzept über Prototyping bis zum produktreifen Design-System.', tags: ['Product Design', 'Prototyping', 'Design-Systeme'] },
+        { no: '03', title: 'Strategie & Beratung', desc: 'Wir bewerten Use-Cases ehrlich auf Machbarkeit und Wirkung, priorisieren nach Business-Value und liefern eine klare Roadmap.', tags: ['Use-Case Audit', 'Roadmap', 'Machbarkeit'] },
+        { no: '04', title: 'Umsetzung & Netzwerk', desc: 'Auf Wunsch begleiten wir bis in die Execution — mit einem Netzwerk aus Fachkräften für jeden digitalen Bereich, von KMU bis Enterprise.', tags: ['Development', 'Fachkräfte-Netzwerk', 'Enterprise-ready'] },
+      ],
+      steps: [
+        { n: '1', title: 'Verstehen', desc: 'Wir tauchen in eure Prozesse, Daten und Ziele ein.' },
+        { n: '2', title: 'Konzipieren', desc: 'Wir designen den Workflow und das passende Interface.' },
+        { n: '3', title: 'Bauen', desc: 'Prototyp, Validierung, Integration — iterativ und sichtbar.' },
+        { n: '4', title: 'Skalieren', desc: 'Wir härten die Lösung und übergeben sie produktionsreif.' },
+      ],
+      tools: ['OpenAI', 'Anthropic Claude', 'LangChain', 'n8n', 'Make', 'Python', 'Next.js', 'Vercel', 'Supabase', 'Figma', 'TypeScript', 'PostgreSQL'],
+    };
+  }
+}
+</script>
+</body>
+</html>
