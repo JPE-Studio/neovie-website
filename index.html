@@ -19,23 +19,65 @@
   ::selection{background:#C9F23C;color:#111;}
   @keyframes nvSpin{to{transform:rotate(360deg)}}
   @keyframes nvPulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+  /* ===== Responsive ===== */
+  .nv-wrap{width:100%;}
+  img{max-width:100%;}
+  @media (max-width:980px){
+    .nv-nav-links{display:none !important;}
+    .nv-hero{min-height:560px !important;}
+    .nv-hero-content{padding:72px 18px 34px !important;}
+    .nv-h1{font-size:50px !important;}
+    .nv-cta-h2{font-size:44px !important;}
+    .nv-quote{font-size:29px !important;}
+    .nv-leist-grid{grid-template-columns:1fr !important; gap:34px !important;}
+    .nv-leist-visual{min-height:320px !important;}
+    .nv-team-grid{grid-template-columns:1fr !important;}
+    .nv-steps-grid{grid-template-columns:repeat(2,1fr) !important;}
+    .nv-stack-grid{grid-template-columns:1fr !important; gap:28px !important;}
+    .nv-stack-card{padding:40px 30px !important;}
+    .nv-cta-card{padding:54px 32px 40px !important;}
+    .nv-cta-row{gap:30px !important;}
+    .nv-foot-grid{grid-template-columns:1fr 1fr !important; gap:30px !important;}
+  }
+  @media (max-width:600px){
+    .nv-wrap{padding:12px 14px 36px !important;}
+    .nv-hero{min-height:auto !important; padding:18px 16px !important; border-radius:22px !important;}
+    .nv-nav{padding:4px 0 !important;}
+    .nv-hero-content{padding:46px 4px 26px !important;}
+    .nv-h1{font-size:34px !important; letter-spacing:-1px !important;}
+    .nv-hero-lead{font-size:16px !important; margin:20px 0 30px !important;}
+    .nv-quote{font-size:22px !important; line-height:1.35 !important;}
+    .nv-quote-wrap{padding:64px 6px 54px !important;}
+    .nv-h2{font-size:26px !important;}
+    .nv-leist-h3{font-size:22px !important;}
+    .nv-leist-visual{min-height:260px !important;}
+    .nv-steps-grid{grid-template-columns:1fr !important;}
+    .nv-team-img{height:300px !important;}
+    .nv-stack-card{padding:30px 18px !important; border-radius:20px !important;}
+    .nv-stack-grid{gap:22px !important;}
+    .nv-cta-card{padding:42px 20px 30px !important; border-radius:22px !important;}
+    .nv-cta-h2{font-size:30px !important;}
+    .nv-cta-row{flex-direction:column !important; align-items:flex-start !important;}
+    .nv-foot-grid{grid-template-columns:1fr !important; gap:26px !important;}
+  }
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="--accent:#C9F23C; --accent-deep:#B6E01F; --ink:#111511; background:#F4F5F2; color:#111511; font-family:'DM Sans',system-ui,sans-serif;">
-<div style="max-width:1240px; margin:0 auto; padding:18px 22px 60px;">
+<div class="nv-wrap" style="max-width:1240px; margin:0 auto; padding:18px 22px 60px;">
 
   <!-- HERO -->
-  <section style="position:relative; border-radius:30px; overflow:hidden; background:linear-gradient(150deg,#13182A 0%,#0C1020 55%,#0A0D18 100%); min-height:640px; padding:28px;">
+  <section class="nv-hero" style="position:relative; border-radius:30px; overflow:hidden; background:linear-gradient(150deg,#13182A 0%,#0C1020 55%,#0A0D18 100%); min-height:640px; padding:28px;">
     <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(75% 70% at 50% 35%,#000,transparent 80%); pointer-events:none;"></div>
     <div style="position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:900px; height:520px; background:radial-gradient(closest-side, rgba(201,242,60,0.16), transparent); pointer-events:none;"></div>
 
     <!-- nav -->
-    <nav style="position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:8px 12px;">
+    <nav class="nv-nav" style="position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:8px 12px;">
       <a href="#top" style="display:flex; align-items:center; gap:11px;">
         <img src="assets/neovie-icon.png" alt="neovie.dev" style="width:34px; height:34px; object-fit:contain;">
         <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:19px; letter-spacing:0.5px; color:#fff;">NEOVIE<span style="color:var(--accent);">.dev</span></span>
       </a>
-      <div style="display:flex; gap:32px; font-size:14.5px; font-weight:500; color:rgba(255,255,255,0.78);">
+      <div class="nv-nav-links" style="display:flex; gap:32px; font-size:14.5px; font-weight:500; color:rgba(255,255,255,0.78);">
         <a href="#leistungen" style-hover="color:#fff">Leistungen</a>
         <a href="#team" style-hover="color:#fff">Team</a>
         <a href="#vorgehen" style-hover="color:#fff">Vorgehen</a>
@@ -46,12 +88,12 @@
     </nav>
 
     <!-- hero content -->
-    <div id="top" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; padding:96px 20px 40px;">
+    <div id="top" class="nv-hero-content" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; padding:96px 20px 40px;">
       <div style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); padding:7px 15px; border:1px solid rgba(201,242,60,0.35); border-radius:100px; margin-bottom:30px;">
         <span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:nvPulse 2s infinite;"></span>KI-Beratung · Wien
       </div>
-      <h1 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:72px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; color:#fff; margin:0; max-width:880px;">Wir bauen und skalieren <span style="color:var(--accent);">KI-Produkte</span></h1>
-      <p style="font-size:18px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:560px; margin:26px 0 38px;">Beratungsagentur für KI-getriebene Workflows und digitale Produkte — mit Spezialisierung auf UI/UX. Aus Wien, für KMU bis Enterprise.</p>
+      <h1 class="nv-h1" style="font-family:'Archivo',sans-serif; font-weight:900; font-size:72px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; color:#fff; margin:0; max-width:880px;">Wir bauen und skalieren <span style="color:var(--accent);">KI-Produkte</span></h1>
+      <p class="nv-hero-lead" style="font-size:18px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:560px; margin:26px 0 38px;">Beratungsagentur für KI-getriebene Workflows und digitale Produkte — mit Spezialisierung auf UI/UX. Aus Wien, für KMU bis Enterprise.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
         <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15.5px; padding:16px 30px; border-radius:100px; background:var(--accent); color:#111;" style-hover="filter:brightness(1.05)">Gespräch buchen</a>
         <a href="#vorgehen" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15.5px; padding:16px 30px; border-radius:100px; background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.22);" style-hover="background:rgba(255,255,255,0.15)">Wie wir arbeiten</a>
@@ -60,8 +102,8 @@
   </section>
 
   <!-- QUOTE -->
-  <section style="padding:96px 30px 80px; max-width:1000px;">
-    <p style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:36px; line-height:1.32; letter-spacing:-0.6px; color:#111511; margin:0; text-wrap:balance;">„Wir verbinden KI mit echtem UI/UX-Handwerk — für Produkte, die Menschen gerne benutzen und Unternehmen messbar voranbringen.“</p>
+  <section class="nv-quote-wrap" style="padding:96px 30px 80px; max-width:1000px;">
+    <p class="nv-quote" style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:36px; line-height:1.32; letter-spacing:-0.6px; color:#111511; margin:0; text-wrap:balance;">„Wir verbinden KI mit echtem UI/UX-Handwerk — für Produkte, die Menschen gerne benutzen und Unternehmen messbar voranbringen.“</p>
     <div style="display:flex; align-items:center; gap:12px; margin-top:28px;">
       <div style="width:38px;height:2px;background:var(--accent-deep);"></div>
       <span style="font-size:14px; font-weight:600; color:#6E746E;">AI Workflows. Digital Products. Impact.</span>
@@ -72,15 +114,15 @@
   <section id="leistungen" style="padding:30px 0 70px;">
     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:46px;">
       <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap;">
-        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;">Unsere Leistungen</h2>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Unsere Leistungen</h2>
         <span style="font-size:15px; color:#8A908A;">Das, womit wir euch wirklich weiterbringen.</span>
       </div>
       <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; padding:11px 22px; border-radius:100px; background:var(--accent); color:#111;" style-hover="filter:brightness(1.05)">Gespräch buchen</a>
     </div>
 
-    <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:54px; align-items:start;">
+    <div class="nv-leist-grid" style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:54px; align-items:start;">
       <!-- visual -->
-      <div style="position:relative; min-height:440px; display:flex; flex-direction:column; justify-content:center; gap:14px;">
+      <div class="nv-leist-visual" style="position:relative; min-height:440px; display:flex; flex-direction:column; justify-content:center; gap:14px;">
           <div style="background:#13182A; border-radius:14px; padding:18px 18px 22px; box-shadow:0 24px 50px -24px rgba(0,0,0,0.4); transform:rotate(-2deg);">
             <div style="font-size:11px; letter-spacing:1px; color:var(--accent); font-weight:600; text-transform:uppercase;">workflow · live</div>
             <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; color:#fff; margin-top:8px;">Input → Agent → Output</div>
@@ -98,7 +140,7 @@
           <div style="display:flex; align-items:flex-start; gap:24px; padding:24px 4px; border-top:1px solid #E2E4DE;">
             <span style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:#9AA09A; width:30px; flex-shrink:0; padding-top:6px;">{{ s.no }}</span>
             <div style="flex:1;">
-              <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:29px; letter-spacing:-0.5px; margin:0; color:#111511;">{{ s.title }}</h3>
+              <h3 class="nv-leist-h3" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:29px; letter-spacing:-0.5px; margin:0; color:#111511;">{{ s.title }}</h3>
               <p style="font-size:14.5px; line-height:1.55; color:#6E746E; margin:9px 0 0; max-width:540px;">{{ s.desc }}</p>
             </div>
           </div>
@@ -111,13 +153,13 @@
   <!-- TEAM -->
   <section id="team" style="padding:60px 0 70px;">
     <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:44px;">
-      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;">Das Team</h2>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Das Team</h2>
       <span style="font-size:15px; color:#8A908A;">Die Köpfe hinter neovie.dev.</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:22px;">
+    <div class="nv-team-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:22px;">
       <sc-for list="{{ team }}" as="m" hint-placeholder-count="0">
-        <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; overflow:hidden; display:flex; flex-direction:column;" style-hover="border-color:#111511">
-          <div style="position:relative; height:360px; background:{{ m.bg }}; overflow:hidden; display:flex; align-items:flex-end; justify-content:center;">
+        <div class="nv-team-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; overflow:hidden; display:flex; flex-direction:column;" style-hover="border-color:#111511">
+          <div class="nv-team-img" style="position:relative; height:360px; background:{{ m.bg }}; overflow:hidden; display:flex; align-items:flex-end; justify-content:center;">
             <div style="position:absolute; inset:0; background-image:radial-gradient(rgba(0,0,0,0.05) 1.5px,transparent 1.5px); background-size:20px 20px; pointer-events:none;"></div>
             <img ref="{{ m.imgRef }}" alt="{{ m.name }}" style="position:relative; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
           </div>
@@ -141,10 +183,10 @@
   <!-- VORGEHEN -->
   <section id="vorgehen" style="padding:60px 0 70px;">
     <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:44px;">
-      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;">So arbeiten wir</h2>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">So arbeiten wir</h2>
       <span style="font-size:15px; color:#8A908A;">Klar, pragmatisch, messbar.</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+    <div class="nv-steps-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
       <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
         <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:30px 26px; min-height:210px; display:flex; flex-direction:column;" style-hover="border-color:#111511; transform:translateY(-3px)">
           <div style="width:42px; height:42px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:18px; color:#111; margin-bottom:auto;">{{ st.n }}</div>
@@ -157,10 +199,10 @@
 
   <!-- STACK -->
   <section id="stack" style="padding:60px 0 70px;">
-    <div style="background:#fff; border:1px solid #E6E8E2; border-radius:26px; padding:50px 46px;">
-      <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center;">
+    <div class="nv-stack-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:26px; padding:50px 46px;">
+      <div class="nv-stack-grid" style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center;">
         <div>
-          <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; letter-spacing:-0.5px; text-transform:uppercase; margin:0 0 16px;">Stack & Tools</h2>
+          <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:34px; letter-spacing:-0.5px; text-transform:uppercase; margin:0 0 16px;" class="nv-h2">Stack & Tools</h2>
           <p style="font-size:15.5px; line-height:1.6; color:#6E746E; margin:0;">Modellunabhängig und integrationsstark — wir wählen die Tools nach eurem Use-Case, nicht nach Hype. Mit einem Netzwerk an Fachkräften für jeden digitalen Bereich.</p>
         </div>
         <div style="display:flex; flex-wrap:wrap; gap:11px;">
@@ -174,12 +216,12 @@
 
   <!-- KONTAKT / CTA (black) -->
   <section id="kontakt" style="padding:40px 0 0;">
-    <div style="background:#0C0F18; border-radius:30px; padding:70px 56px 48px; color:#fff; position:relative; overflow:hidden;">
+    <div class="nv-cta-card" style="background:#0C0F18; border-radius:30px; padding:70px 56px 48px; color:#fff; position:relative; overflow:hidden;">
       <div style="position:absolute; bottom:-160px; left:-120px; width:520px; height:520px; background:radial-gradient(closest-side, rgba(201,242,60,0.16), transparent); pointer-events:none;"></div>
 
-      <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+      <div class="nv-cta-row" style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
         <div style="max-width:680px;">
-          <h2 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:60px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; margin:0;">Bereit, mit uns zu arbeiten?</h2>
+          <h2 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:60px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; margin:0;" class="nv-cta-h2">Bereit, mit uns zu arbeiten?</h2>
           <p style="font-size:16.5px; color:rgba(255,255,255,0.65); margin:22px 0 0; max-width:480px; line-height:1.6;">Erzählt uns von eurem Vorhaben — wir melden uns mit einer ehrlichen Einschätzung. Kostenlos und unverbindlich.</p>
         </div>
         <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style="position:relative; width:138px; height:138px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
@@ -193,7 +235,7 @@
 
       <div style="position:relative; height:1px; background:rgba(255,255,255,0.12); margin:54px 0 36px;"></div>
 
-      <div style="position:relative; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;">
+      <div class="nv-foot-grid" style="position:relative; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;">
         <div>
           <div style="display:flex; align-items:center; gap:11px; margin-bottom:16px;">
             <img src="assets/neovie-icon.png" alt="" style="width:30px; height:30px; object-fit:contain;">
