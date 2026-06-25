@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EU AI Act Beratung — neovie.dev</title>
+<meta name="description" content="Wir beraten euch zur EU AI Act Compliance: KI-Inventarisierung, Risikoklassifizierung, Gap-Analyse und maßgeschneiderte Compliance-Roadmap.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#F4F5F2;}
+  a{text-decoration:none;color:inherit;}
+  ::selection{background:#C9F23C;color:#111;}
+  @keyframes nvSpin{to{transform:rotate(360deg)}}
+  @keyframes nvPulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+  @media (max-width:980px){
+    .nv-nav-links{display:none !important;}
+    .nv-hero{min-height:480px !important; padding:22px 18px 50px !important;}
+    .nv-hero-content{padding:56px 14px 30px !important;}
+    .nv-h1{font-size:44px !important;}
+    .nv-h2{font-size:28px !important;}
+    .nv-cta-h2{font-size:40px !important;}
+    .nv-risk-grid{grid-template-columns:1fr !important;}
+    .nv-services-grid{grid-template-columns:1fr !important;}
+    .nv-timeline-grid{grid-template-columns:1fr !important;}
+    .nv-two-col{grid-template-columns:1fr !important;}
+    .nv-cta-row{gap:30px !important;}
+    .nv-foot-grid{grid-template-columns:1fr 1fr !important; gap:30px !important;}
+  }
+  @media (max-width:600px){
+    .nv-wrap{padding:12px 14px 36px !important;}
+    .nv-hero{border-radius:22px !important; padding:16px !important;}
+    .nv-nav{padding:4px 0 !important;}
+    .nv-hero-content{padding:40px 4px 22px !important;}
+    .nv-h1{font-size:30px !important; letter-spacing:-1px !important;}
+    .nv-hero-lead{font-size:15.5px !important; margin:18px 0 26px !important;}
+    .nv-h2{font-size:24px !important;}
+    .nv-risk-grid{gap:16px !important;}
+    .nv-risk-card{padding:24px 20px !important;}
+    .nv-cta-card{padding:42px 20px 30px !important; border-radius:22px !important;}
+    .nv-cta-h2{font-size:28px !important;}
+    .nv-cta-row{flex-direction:column !important; align-items:flex-start !important;}
+    .nv-foot-grid{grid-template-columns:1fr !important; gap:26px !important;}
+    .nv-sources-grid{grid-template-columns:1fr !important;}
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--accent:#C9F23C; --accent-deep:#B6E01F; --ink:#111511; background:#F4F5F2; color:#111511; font-family:'DM Sans',system-ui,sans-serif;">
+<div class="nv-wrap" style="max-width:1240px; margin:0 auto; padding:18px 22px 60px;">
+
+  <!-- HERO -->
+  <section class="nv-hero" style="position:relative; border-radius:30px; overflow:hidden; background:linear-gradient(150deg,#13182A 0%,#0C1020 55%,#0A0D18 100%); min-height:520px; padding:28px; margin-bottom:70px;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(75% 70% at 50% 35%,#000,transparent 80%); pointer-events:none;"></div>
+    <div style="position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:900px; height:520px; background:radial-gradient(closest-side, rgba(201,242,60,0.16), transparent); pointer-events:none;"></div>
+
+    <!-- nav -->
+    <nav class="nv-nav" style="position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:8px 12px;">
+      <a href="index.html" style="display:flex; align-items:center; gap:11px;">
+        <img src="assets/neovie-icon.png" alt="neovie.dev" style="width:34px; height:34px; object-fit:contain;">
+        <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:19px; letter-spacing:0.5px; color:#fff;">NEOVIE<span style="color:var(--accent);">.dev</span></span>
+      </a>
+      <div class="nv-nav-links" style="display:flex; gap:32px; font-size:14.5px; font-weight:500; color:rgba(255,255,255,0.78);">
+        <a href="index.html#leistungen" style-hover="color:#fff">Leistungen</a>
+        <a href="ai-act.html" style="color:#fff;">EU AI Act</a>
+        <a href="index.html#team" style-hover="color:#fff">Team</a>
+        <a href="index.html#vorgehen" style-hover="color:#fff">Vorgehen</a>
+        <a href="index.html#kontakt" style-hover="color:#fff">Kontakt</a>
+      </div>
+      <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; padding:11px 22px; border-radius:100px; background:var(--accent); color:#111;" style-hover="background:#fff">Gespräch buchen</a>
+    </nav>
+
+    <!-- hero content -->
+    <div class="nv-hero-content" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; padding:70px 20px 40px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); padding:7px 15px; border:1px solid rgba(201,242,60,0.35); border-radius:100px; margin-bottom:26px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:nvPulse 2s infinite;"></span>Compliance · Beratung · Umsetzung
+      </div>
+      <h1 class="nv-h1" style="font-family:'Archivo',sans-serif; font-weight:900; font-size:56px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; color:#fff; margin:0; max-width:840px;">EU AI Act <span style="color:var(--accent);">Compliance</span> Beratung</h1>
+      <p class="nv-hero-lead" style="font-size:17.5px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:600px; margin:22px 0 34px;">Der EU AI Act (Verordnung (EU) 2024/1689) ist das weltweit erste umfassende Gesetz für KI. Wir helfen euch, bis zum 2. August 2026 compliance-ready zu sein — pragmatisch, ehrlich und KMU-geeignet.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+        <a href="#beratung" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15.5px; padding:16px 30px; border-radius:100px; background:var(--accent); color:#111;" style-hover="filter:brightness(1.05)">Unsere Leistungen</a>
+        <a href="#timeline" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15.5px; padding:16px 30px; border-radius:100px; background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.22);" style-hover="background:rgba(255,255,255,0.15)">Wichtige Daten</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAS IST DER EU AI ACT -->
+  <section style="padding:30px 0 50px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Was ist der EU AI Act?</h2>
+      <span style="font-size:15px; color:#8A908A;">Kurz & knapp — die wichtigsten Fakten.</span>
+    </div>
+    <div class="nv-two-col" style="display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start;">
+      <div>
+        <p style="font-size:15.5px; line-height:1.65; color:#6E746E; margin:0 0 18px;">Die <strong style="color:#111511;">EU AI Act Verordnung (EU) 2024/1689</strong> wurde am 13. Juni 2024 vom Europäischen Parlament und Rat verabschiedet und im Amtsblatt der EU veröffentlicht. Sie ist das weltweit erste umfassende Rechtsrahmenwerk für Künstliche Intelligenz und gilt für <strong style="color:#111511;">alle KI-Systeme</strong>, die auf dem EU-Markt eingesetzt oder in die EU eingeführt werden — unabhängig davon, wo der Anbieter ansässig ist.</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#6E746E; margin:0 0 18px;">Das Gesetz nutzt einen <strong style="color:#111511;">risikobasierten Ansatz</strong>: Je höher das Risiko eines KI-Systems, desto strenger die Anforderungen. Es gilt für Provider (Entwickler), Deployer (Anwender), Importeure und Distributoren von KI-Systemen.</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#6E746E; margin:0;">Für <strong style="color:#111511;">KMU gibt es keine Größenausnahme</strong> — aber erleichterte Verfahren, reduzierte Gebühren für Konformitätsbewertungen und Zugang zu Regulatory Sandboxes.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px;">
+          <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:10px;">Offizieller Gesetzestext</div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">Verordnung (EU) 2024/1689</div>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 14px;">Vollständiger Gesetzestext im Amtsblatt der Europäischen Union. Verbindliche Fassung in allen EU-Sprachen.</p>
+          <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R1689" target="_blank" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:#111511; padding:8px 16px; border-radius:100px; background:#F4F5F2; border:1px solid #E2E4DE; display:inline-block;" style-hover="background:var(--accent); border-color:var(--accent)">EUR-Lex öffnen →</a>
+        </div>
+        <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px;">
+          <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:10px;">Offizielle Ressourcen</div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">European Commission AI Act</div>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 14px;">Übersicht, FAQs, Service Desk und Single Information Platform der EU-Kommission zur Unterstützung der Umsetzung.</p>
+          <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:#111511; padding:8px 16px; border-radius:100px; background:#F4F5F2; border:1px solid #E2E4DE; display:inline-block;" style-hover="background:var(--accent); border-color:var(--accent)">Zur Kommission →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISIKOKLASSEN -->
+  <section style="padding:50px 0 60px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Die 4 Risikostufen</h2>
+      <span style="font-size:15px; color:#8A908A;">Nicht jedes KI-System ist gleich stark reguliert.</span>
+    </div>
+    <div class="nv-risk-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+      <!-- Minimal Risk -->
+      <div class="nv-risk-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:30px 24px; display:flex; flex-direction:column;" style-hover="border-color:#111511; transform:translateY(-3px)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+          <div style="width:14px; height:14px; border-radius:50%; background:#22C55E;"></div>
+          <span style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#22C55E;">Minimales Risiko</span>
+        </div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 10px; color:#111511;">Freiwillige Selbstverpflichtung</h3>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 auto;">Spam-Filter, interne ChatGPT-Nutzung, Übersetzungstools, einfache Empfehlungssysteme. ~80% der KMU-Systeme fallen hier rein.</p>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E2E4DE;">
+          <div style="font-size:12px; font-weight:600; color:#8A908A; margin-bottom:6px;">Anforderungen</div>
+          <div style="font-size:14px; color:#6E746E;">Nur allgemeine KI-Kompetenz (Art. 4) empfohlen</div>
+        </div>
+      </div>
+      <!-- Limited Risk -->
+      <div class="nv-risk-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:30px 24px; display:flex; flex-direction:column;" style-hover="border-color:#111511; transform:translateY(-3px)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+          <div style="width:14px; height:14px; border-radius:50%; background:#F59E0B;"></div>
+          <span style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#F59E0B;">Begrenztes Risiko</span>
+        </div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 10px; color:#111511;">Transparenzpflichten</h3>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 auto;">Chatbots, KI-generierte Inhalte (Deepfakes), Emotionserkennungssysteme. Nutzer müssen informiert werden, dass sie mit KI interagieren.</p>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E2E4DE;">
+          <div style="font-size:12px; font-weight:600; color:#8A908A; margin-bottom:6px;">Anforderungen</div>
+          <div style="font-size:14px; color:#6E746E;">Transparenz gegenüber Nutzern, Labeling (Art. 50)</div>
+        </div>
+      </div>
+      <!-- High Risk -->
+      <div class="nv-risk-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:30px 24px; display:flex; flex-direction:column;" style-hover="border-color:#111511; transform:translateY(-3px)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+          <div style="width:14px; height:14px; border-radius:50%; background:#EF4444;"></div>
+          <span style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#EF4444;">Hochrisiko</span>
+        </div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 10px; color:#111511;">Strenge Anforderungen</h3>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 auto;">HR/Recruiting, Kreditwürdigkeit, medizinische Diagnose, Bildung, kritische Infrastruktur. Konformitätsbewertung und CE-Kennzeichnung nötig.</p>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E2E4DE;">
+          <div style="font-size:12px; font-weight:600; color:#8A908A; margin-bottom:6px;">Anforderungen</div>
+          <div style="font-size:14px; color:#6E746E;">Risikomanagement, Dokumentation, Human Oversight, CE-Kennzeichnung, Konformitätsbewertung (Art. 8-15)</div>
+        </div>
+      </div>
+      <!-- Unacceptable -->
+      <div class="nv-risk-card" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:30px 24px; display:flex; flex-direction:column;" style-hover="border-color:#111511; transform:translateY(-3px)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+          <div style="width:14px; height:14px; border-radius:50%; background:#111511;"></div>
+          <span style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#111511;">Verboten</span>
+        </div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 10px; color:#111511;">Verbotene Praktiken</h3>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0 0 auto;">Soziale Scoring, subliminale Manipulation, biometrische Echtzeit-Fernidentifikation in öffentlichen Räumen (Art. 5).</p>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E2E4DE;">
+          <div style="font-size:12px; font-weight:600; color:#8A908A; margin-bottom:6px;">Anforderungen</div>
+          <div style="font-size:14px; color:#6E746E;">Absolutes Verbot — keine Ausnahmen</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px; background:#F4F5F2; border:1px solid #E2E4DE; border-radius:14px; padding:18px 24px;">
+      <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;"><strong style="color:#111511;">Wichtig:</strong> Auch eingekaufte Software und Zulieferer-KI zählen! Der AI Act gilt nicht nur für selbst entwickelte Systeme. Der Digital Omnibus (Legislativvorschlag) könnte die Hochrisiko-Frist vom 2. August 2026 auf 2027 verschieben — aber KI-Kompetenz (Art. 4) und GPAI-Regeln gelten bereits jetzt.</p>
+    </div>
+  </section>
+
+  <!-- UNSERE BERATUNGSLEISTUNGEN -->
+  <section id="beratung" style="padding:50px 0 60px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Unsere Beratungsleistungen</h2>
+      <span style="font-size:15px; color:#8A908A;">Von der Analyse bis zur Umsetzung.</span>
+    </div>
+    <div class="nv-services-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:22px;">
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">📋</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">KI-Inventarisierung</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Systematische Bestandsaufnahme aller KI-Systeme in eurem Unternehmen — von intern genutzten Tools über eingekaufte Software bis zu kundensichtbaren Anwendungen. Wir dokumentieren Provider, Deployer-Status und Datenflüsse.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">🎯</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">Risikoklassifizierung</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Bewertung jedes identifizierten KI-Systems nach den Kriterien des EU AI Act (Anhang III für Hochrisiko, Art. 52 für Transparenzpflichten). Klare Zuordnung zu den 4 Risikostufen mit begründeter Dokumentation.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">🔍</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">Gap-Analyse &amp; Roadmap</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Vergleich des aktuellen Status mit den gesetzlichen Anforderungen. Identifikation von Lücken und Erstellung eines priorisierten, zeitlichen Fahrplans zur Schließung — mit realistischen Aufwänden und Meilensteinen.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">📄</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">Dokumentation &amp; Governance</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Erstellung der technischen Dokumentation gemäß Art. 11, Aufbau eines Risikomanagementsystems (Art. 9), Implementierung von Human Oversight (Art. 14) und Entwicklung einer KI-Governance-Struktur für euer Unternehmen.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">🧪</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">KI-Fitness-Check</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Schneller, strukturierter Check in 2-3 Stunden: Welche KI-Systeme habt ihr? Welche Risikostufe? Was fehlt bis zur Compliance? Ideal als erster Schritt — mit konkretem Handlungsplan als Ergebnis.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:24px; padding:36px 32px;" style-hover="border-color:#111511">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px;">🤝</div>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; margin:0 0 10px; color:#111511;">Implementierungsbegleitung</h3>
+        <p style="font-size:15px; line-height:1.6; color:#6E746E; margin:0;">Begleitung bei der praktischen Umsetzung — von der Anpassung interner Prozesse über die Schulung von Mitarbeitern bis zur Vorbereitung auf Konformitätsbewertungen. Bei Bedarf Vermittlung an akkreditierte Notified Bodies.</p>
+      </div>
+    </div>
+    <div style="margin-top:30px; background:#13182A; border-radius:20px; padding:32px 36px; color:#fff;">
+      <div style="display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+        <div style="font-size:32px; flex-shrink:0;">⚠️</div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; margin-bottom:8px; color:#fff;">Wichtiger Hinweis</div>
+          <p style="font-size:15px; line-height:1.6; color:rgba(255,255,255,0.72); margin:0;">Wir sind <strong style="color:#fff;">keine Notified Body</strong> (akkreditierte Konformitätsbewertungsstelle nach Art. 29-31 EU AI Act) und stellen keine offiziellen EU-Konformitätszertifikate aus. Bei Hochrisiko-Systemen, die eine Third-Party Zertifizierung benötigen, bereiten wir die erforderliche Dokumentation vor und vermitteln an akkreditierte Stellen. Unsere Beratung erfolgt nach bestem Wissen auf Basis der aktuellen Rechtslage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" style="padding:50px 0 60px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Wichtige Daten</h2>
+      <span style="font-size:15px; color:#8A908A;">Die Timeline bis 2027.</span>
+    </div>
+    <div class="nv-timeline-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:28px 26px; display:flex; align-items:flex-start; gap:18px;" style-hover="border-color:#111511">
+        <div style="width:56px; height:56px; border-radius:16px; background:#22C55E; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; color:#fff; flex-shrink:0; text-align:center; line-height:1.2;">✓<br><span style="font-size:9px; font-weight:600;">DONE</span></div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#22C55E; margin-bottom:4px;">02. Februar 2025</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0 0 8px; color:#111511;">Verbotene Praktiken (Art. 5)</h3>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Soziales Scoring, subliminale Manipulation, biometrische Echtzeit-Fernidentifikation in öffentlichen Räumen — absolutes Verbot. Sofort wirksam.</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:28px 26px; display:flex; align-items:flex-start; gap:18px;" style-hover="border-color:#111511">
+        <div style="width:56px; height:56px; border-radius:16px; background:#22C55E; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; color:#fff; flex-shrink:0; text-align:center; line-height:1.2;">✓<br><span style="font-size:9px; font-weight:600;">DONE</span></div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#22C55E; margin-bottom:4px;">August 2025</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0 0 8px; color:#111511;">GPAI Modelle (Art. 52-56)</h3>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Regeln für General-Purpose AI Models — Systemic Risk Klassifizierung, Transparenzpflichten, Code of Practice. Wichtig für Anbieter großer Sprachmodelle.</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:2px solid var(--accent); border-radius:20px; padding:28px 26px; display:flex; align-items:flex-start; gap:18px; position:relative; overflow:hidden;" style-hover="transform:translateY(-3px)">
+        <div style="position:absolute; top:12px; right:16px; font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.5px; text-transform:uppercase; color:var(--accent-deep); background:rgba(201,242,60,0.12); padding:4px 10px; border-radius:100px;">Nächster Meilenstein</div>
+        <div style="width:56px; height:56px; border-radius:16px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; color:#111; flex-shrink:0; text-align:center; line-height:1.2;">02<br><span style="font-size:9px; font-weight:600;">AUG</span></div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:var(--accent-deep); margin-bottom:4px;">02. August 2026</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0 0 8px; color:#111511;">Hochrisiko-Systeme (Anhang III)</h3>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Vollständige Anforderungen für Hochrisiko-KI: Risikomanagement, Dokumentation, Human Oversight, Datenqualität, Transparenz, CE-Kennzeichnung. Konformitätsbewertungspflicht.</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:28px 26px; display:flex; align-items:flex-start; gap:18px;" style-hover="border-color:#111511">
+        <div style="width:56px; height:56px; border-radius:16px; background:#E2E4DE; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; color:#6E746E; flex-shrink:0; text-align:center; line-height:1.2;">02<br><span style="font-size:9px; font-weight:600;">AUG</span></div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:#8A908A; margin-bottom:4px;">02. August 2027</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; margin:0 0 8px; color:#111511;">Embedded KI (Anhang I)</h3>
+          <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">KI-Systeme, die in Produkte nach EU-Harmonisierungsrecht eingebettet sind (z.B. Medizinprodukte, Fahrzeuge). Verzögerte Anwendung für bestehende Produktzertifizierungen.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px; background:#F4F5F2; border:1px solid #E2E4DE; border-radius:14px; padding:18px 24px;">
+      <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;"><strong style="color:#111511;">Digital Omnibus:</strong> Ein Legislativvorschlag der EU-Kommission könnte die Hochrisiko-Frist (Anhang III) vom 2. August 2026 auf den 2. August 2027 verschieben. Der Vorschlag muss noch vom EU-Parlament und Rat angenommen werden. Wir empfehlen, die gewonnene Zeit für eine gründliche Vorbereitung zu nutzen statt abzuwarten.</p>
+    </div>
+  </section>
+
+  <!-- WARUM JETZT -->
+  <section style="padding:50px 0 60px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Warum jetzt handeln?</h2>
+      <span style="font-size:15px; color:#8A908A;">Die Kosten des Wartens sind höher als die der Vorbereitung.</span>
+    </div>
+    <div class="nv-two-col" style="display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start;">
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">💰</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">Sanktionen bis 35 Mio €</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Bei Verstößen gegen verbotene Praktiken: bis zu 35 Millionen € oder 7% des globalen Jahresumsatzes. Bei Hochrisiko-Verstößen: bis zu 15 Millionen € oder 3%.</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">🏢</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">Betriebsuntersagung möglich</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Neben Geldstrafen können Marktüberwachungsbehörden auch Betriebsuntersagungen und Rückrufe von KI-Systemen anordnen.</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">🏆</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">Wettbewerbsvorteil</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Frühe Compliance signalisiert Verantwortungsbewusstsein gegenüber Kunden und Partnern. In Ausschreibungen wird der EU AI Act zunehmend relevant.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">📈</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">Keine Überraschungen</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Je früher ihr startet, desto mehr Zeit habt ihr für Anpassungen. Last-Minute-Umsetzungen sind teurer und fehleranfälliger.</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">🧩</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">KMU-freundlich</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Der AI Act enthält spezielle Erleichterungen für KMU: reduzierte Konformitätsgebühren, Zugang zu Regulatory Sandboxes, vereinfachte Dokumentationsanforderungen.</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">🤝</div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#111511; margin-bottom:4px;">Vertrauen aufbauen</div>
+            <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Kunden, Investoren und Partner schätzen transparente KI-Nutzung. Der AI Act gibt euch einen Rahmen, um das zu dokumentieren und zu kommunizieren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFIZIELLE QUELLEN -->
+  <section style="padding:50px 0 60px;">
+    <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:40px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.5px; text-transform:uppercase; margin:0;" class="nv-h2">Offizielle Quellen</h2>
+      <span style="font-size:15px; color:#8A908A;">Vertrauenswürdige Informationen direkt von der Quelle.</span>
+    </div>
+    <div class="nv-sources-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+      <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R1689" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">EUR-Lex · Verbindlicher Text</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">Verordnung (EU) 2024/1689</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Der vollständige, verbindliche Gesetzestext im Amtsblatt der Europäischen Union. In allen EU-Sprachen verfügbar.</p>
+      </a>
+      <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">European Commission</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">AI Act Overview &amp; FAQs</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Offizielle Übersicht der EU-Kommission mit FAQs, Leitfäden und der Single Information Platform.</p>
+      </a>
+      <a href="https://ai-act-service-desk.ec.europa.eu/en" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">EU AI Act Service Desk</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">Support &amp; Beratung</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Offizieller Service Desk der EU-Kommission für Fragen zur Umsetzung des EU AI Act. Gestartet Oktober 2025.</p>
+      </a>
+      <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-office" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">European AI Office</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">Umsetzung &amp; Durchsetzung</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Eingerichtet Mai 2024. Koordiniert die kohärente Umsetzung und Durchsetzung des AI Act in allen Mitgliedstaaten.</p>
+      </a>
+      <a href="https://artificialintelligenceact.eu/de/das-gesetz/" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">Future of Life Institute</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">AI Act Explorer (Deutsch)</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Durchsuchbarer, mehrsprachiger Explorer des vollständigen AI Act Texts. Ideal für gezielte Recherche zu einzelnen Artikeln.</p>
+      </a>
+      <a href="https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai" target="_blank" style="background:#fff; border:1px solid #E6E8E2; border-radius:20px; padding:26px 28px; display:block;" style-hover="border-color:#111511">
+        <div style="font-size:11px; letter-spacing:1px; color:var(--accent-deep); font-weight:600; text-transform:uppercase; margin-bottom:8px;">EU Code of Practice</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:#111511; margin-bottom:8px;">General-Purpose AI Code</div>
+        <p style="font-size:14px; line-height:1.55; color:#6E746E; margin:0;">Von unabhängigen Experten erarbeiteter Code of Practice für GPAI-Anbieter. Von der Kommission gebilligt als Compliance-Nachweis.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:40px 0 0;">
+    <div class="nv-cta-card" style="background:#0C0F18; border-radius:30px; padding:70px 56px 48px; color:#fff; position:relative; overflow:hidden;">
+      <div style="position:absolute; bottom:-160px; left:-120px; width:520px; height:520px; background:radial-gradient(closest-side, rgba(201,242,60,0.16), transparent); pointer-events:none;"></div>
+
+      <div class="nv-cta-row" style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+        <div style="max-width:680px;">
+          <h2 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:52px; line-height:0.98; letter-spacing:-1.5px; text-transform:uppercase; margin:0;" class="nv-cta-h2">Bereit für den <span style="color:var(--accent);">EU AI Act</span>?</h2>
+          <p style="font-size:16.5px; color:rgba(255,255,255,0.65); margin:22px 0 0; max-width:480px; line-height:1.6;">Bucht einen kostenlosen Erstgespräch. Wir analysieren euren aktuellen Status und zeigen euch den schnellsten Weg zur Compliance.</p>
+        </div>
+        <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style="position:relative; width:138px; height:138px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 140 140" style="position:absolute; inset:0; width:100%; height:100%; animation:nvSpin 16s linear infinite;">
+            <defs><path id="nvcirc" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"></path></defs>
+            <text style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:4px; fill:var(--accent);"><textPath href="#nvcirc" startOffset="0">GET STARTED · GET STARTED · </textPath></text>
+          </svg>
+          <span style="width:62px; height:62px; border-radius:50%; background:var(--accent); color:#111; display:flex; align-items:center; justify-content:center; font-size:26px;">↓</span>
+        </a>
+      </div>
+
+      <div style="position:relative; height:1px; background:rgba(255,255,255,0.12); margin:54px 0 36px;"></div>
+
+      <div class="nv-foot-grid" style="position:relative; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:11px; margin-bottom:16px;">
+            <img src="assets/neovie-icon.png" alt="" style="width:30px; height:30px; object-fit:contain;">
+            <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:17px; color:#fff;">NEOVIE<span style="color:var(--accent);">.dev</span></span>
+          </div>
+          <p style="font-size:14px; line-height:1.6; color:rgba(255,255,255,0.55); margin:0; max-width:280px;">KI-getriebene Workflows und digitale Produkte mit Fokus auf UI/UX. Aus Wien.</p>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:16px;">Leistungen</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:rgba(255,255,255,0.72);">
+            <a href="index.html#leistungen" style-hover="color:#fff">KI-Workflows</a>
+            <a href="index.html#leistungen" style-hover="color:#fff">UI/UX Design</a>
+            <a href="index.html#leistungen" style-hover="color:#fff">Strategie &amp; Beratung</a>
+            <a href="index.html#leistungen" style-hover="color:#fff">Umsetzung</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:16px;">Unternehmen</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:rgba(255,255,255,0.72);">
+            <a href="index.html#team" style-hover="color:#fff">Team</a>
+            <a href="index.html#vorgehen" style-hover="color:#fff">Vorgehen</a>
+            <a href="ai-act.html" style="color:#fff">EU AI Act</a>
+            <a href="index.html#kontakt" style-hover="color:#fff">Kontakt</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:16px;">Kontakt</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:rgba(255,255,255,0.72);">
+            <a href="mailto:sales@neovie.dev" style-hover="color:#fff">sales@neovie.dev</a>
+            <a href="https://cal.com/julian-petermaier/neovie" target="_blank" style-hover="color:#fff">cal.com/julian-petermaier</a>
+            <span>Wien, Österreich</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:relative; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:44px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12); font-size:13px; color:rgba(255,255,255,0.45);">
+        <span>© 2026 neovie.dev — Wien, Österreich</span>
+        <span>AI Workflows. Digital Products. Impact.</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C9F23C&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  applyAccent() {
+    const el = this._root; if (!el) return;
+    const a = this.props.accentColor || '#C9F23C';
+    el.style.setProperty('--accent', a);
+    el.style.setProperty('--accent-deep', this.shade(a, -0.14));
+  }
+  shade(hex, amt) {
+    try {
+      let h = hex.replace('#',''); if(h.length===3) h=h.split('').map(c=>c+c).join('');
+      let r=parseInt(h.slice(0,2),16), g=parseInt(h.slice(2,4),16), b=parseInt(h.slice(4,6),16);
+      const f=(x)=>Math.max(0,Math.min(255,Math.round(x*(1+amt))));
+      return '#'+[f(r),f(g),f(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+    } catch(e){ return hex; }
+  }
+  componentDidMount(){ this.applyAccent(); }
+  componentDidUpdate(){ this.applyAccent(); }
+  renderVals() {
+    return {
+      rootRef: (el) => { this._root = el; this.applyAccent(); },
+    };
+  }
+}
+</script>
+</body>
+</html>
