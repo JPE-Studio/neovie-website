@@ -59,6 +59,14 @@
     .nv-footer-inner{flex-direction:column !important; align-items:flex-start !important; gap:12px !important;}
     .nv-footer-inner{padding:26px 16px !important;}
   }
+  /* ===== Kontaktformular ===== */
+  .nv-contact-form input,.nv-contact-form textarea{font-family:inherit; transition:border-color .2s;}
+  .nv-contact-form input::placeholder,.nv-contact-form textarea::placeholder{color:rgba(255,255,255,0.4);}
+  .nv-contact-form input:focus,.nv-contact-form textarea:focus{border-color:rgba(100,120,240,0.6) !important;}
+  .nv-form-grid{display:grid; grid-template-columns:1fr 1fr; gap:13px;}
+  @media (max-width:600px){
+    .nv-form-grid{grid-template-columns:1fr !important;}
+  }
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="--accent:#6478F0; --accent-deep:#3D49B5; background:#080B14; color:#EAEDF6; font-family:'Manrope',system-ui,sans-serif; min-height:100vh; position:relative; overflow:hidden;">
@@ -95,7 +103,7 @@
       <p class="nv-hero-lead" style="font-size:18px; line-height:1.6; color:#A6AEC8; max-width:520px; margin:0 0 34px;">neovie.dev ist eure Beratungsagentur für KI-getriebene Workflows und digitale Produkte — mit Spezialisierung auf UI/UX. Aus Wien. Für KMU bis Enterprise.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
         <a href="https://cal.com/neovie" target="_blank" style="font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600; padding:15px 26px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; box-shadow:0 14px 34px -12px rgba(100,120,240,0.8);" style-hover="filter:brightness(1.08)">Gespräch buchen →</a>
-        <a href="mailto:sales@neovie.dev" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:15px 22px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.04)">sales@neovie.dev</a>
+        <a href="#kontakt" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:15px 22px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.04)">Nachricht schreiben</a>
       </div>
       <div class="nv-hero-stats" style="display:flex; gap:30px; margin-top:46px;">
         <div><div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff;">Beratung</div><div style="font-size:13px; color:#7F88A6; margin-top:2px;">+ Umsetzung auf Wunsch</div></div>
@@ -210,8 +218,7 @@
           <h2 class="nv-cta-h2" style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.06; letter-spacing:-1.2px; margin:0 0 18px; color:#fff;">Wo kann KI bei euch Wirkung zeigen?</h2>
           <p style="font-size:17px; line-height:1.6; color:#A6AEC8; max-width:440px; margin:0 0 32px;">Erzählt uns von eurem Vorhaben — wir melden uns mit einer ehrlichen Einschätzung. Kostenlos und unverbindlich.</p>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
-            <a href="https://cal.com/neovie" target="_blank" style="font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600; padding:16px 28px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; box-shadow:0 14px 34px -12px rgba(100,120,240,0.8);" style-hover="filter:brightness(1.08)">Termin via cal.com →</a>
-            <a href="mailto:sales@neovie.dev" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:16px 24px; border-radius:12px; border:1px solid rgba(255,255,255,0.16); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.32); background:rgba(255,255,255,0.04)">sales@neovie.dev</a>
+            <a href="#kontakt" style="font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:500; padding:16px 24px; border-radius:12px; border:1px solid rgba(255,255,255,0.16); color:#EAEDF6;" style-hover="border-color:rgba(255,255,255,0.32); background:rgba(255,255,255,0.04)">Nachricht schreiben</a>
           </div>
         </div>
         <div class="nv-kontakt-side" style="background:rgba(8,11,20,0.5); border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px;">
@@ -219,14 +226,18 @@
             <div style="width:50px; height:50px; border-radius:13px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; color:#fff;">JP</div>
             <div>
               <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#fff;">Julian Petermaier</div>
-              <div style="font-size:13px; color:#8C94B0;">Founder & Geschäftsführer</div>
+              <div style="font-size:13px; color:#8C94B0;">Founder &amp; Geschäftsführer</div>
             </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:13px; font-size:14px;">
-            <div style="display:flex; justify-content:space-between; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,0.07);"><span style="color:#7F88A6;">E-Mail</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">sales@neovie.dev</span></div>
-            <div style="display:flex; justify-content:space-between; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,0.07);"><span style="color:#7F88A6;">Termin</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">cal.com/neovie</span></div>
-            <div style="display:flex; justify-content:space-between;"><span style="color:#7F88A6;">Standort</span><span style="color:#EAEDF6; font-family:'JetBrains Mono',monospace; font-size:13px;">Wien, AT</span></div>
-          </div>
+          <form class="nv-contact-form" data-source="neovie.dev (Dark)" style="display:flex; flex-direction:column; gap:13px;">
+            <div class="nv-form-grid">
+              <input type="text" name="name" placeholder="Name" required style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:11px; padding:13px 15px; color:#EAEDF6; font-size:14.5px; outline:none; min-width:0;">
+              <input type="email" name="email" placeholder="E-Mail" required style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:11px; padding:13px 15px; color:#EAEDF6; font-size:14.5px; outline:none; min-width:0;">
+            </div>
+            <textarea name="message" placeholder="Worum geht's?" rows="3" required style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:11px; padding:13px 15px; color:#EAEDF6; font-size:14.5px; outline:none; resize:vertical; min-width:0;"></textarea>
+            <button type="submit" style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600; padding:14px 22px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; border:none; cursor:pointer;">Nachricht senden →</button>
+            <div class="nv-form-msg" style="display:none; font-size:14px; font-weight:600; color:var(--accent); text-align:center; padding:4px 0;">✓ Danke! Wir melden uns innerhalb von 24 Stunden.</div>
+          </form>
         </div>
       </div>
     </div>
@@ -286,6 +297,33 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function(){
+  var WEBHOOK='https://n8n.jpe-studio.dev/webhook/c8356ee2-10f6-4880-8609-e73d5bc613c5';
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList||!form.classList.contains('nv-contact-form'))return;
+    e.preventDefault();
+    var msg=form.querySelector('.nv-form-msg');
+    var btn=form.querySelector('button[type=submit]');
+    var data={};
+    new FormData(form).forEach(function(v,k){data[k]=v;});
+    data.source=form.getAttribute('data-source')||'neovie.dev';
+    data.page=location.href;
+    data.submittedAt=new Date().toISOString();
+    if(btn){btn.disabled=true;btn.dataset.label=btn.textContent;btn.textContent='Senden…';}
+    if(msg){msg.style.display='none';msg.style.color='';}
+    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){
+      form.reset();
+      if(msg){msg.textContent='✓ Danke! Wir melden uns innerhalb von 24 Stunden.';msg.style.display='block';}
+      if(btn){btn.disabled=false;btn.textContent='Gesendet ✓';}
+    }).catch(function(){
+      if(msg){msg.textContent='Da ging etwas schief — bitte versucht es erneut.';msg.style.display='block';msg.style.color='#FF8A80';}
+      if(btn){btn.disabled=false;btn.textContent=btn.dataset.label||'Senden';}
+    });
+  });
+})();
 </script>
 </body>
 </html>
